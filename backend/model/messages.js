@@ -2,20 +2,19 @@ import mongoDB from "mongoose";
 
 const msgSchema = new mongoDB.Schema({
     sender_id : {
-        type : mongoDB.Types.ObjectId,
+        type : mongoDB.Schema.Types.ObjectId,
+        ref: "User",
         required : true
     },
     reciever_id : {
-        type : mongoDB.Types.ObjectId,
+        type : mongoDB.Schema.Types.ObjectId,
+        ref : "User",
         required : true
     },
-    text : {
-        type: String,
-        required: true
-    },
-    image : {}
+    text : {type: String},
+    image : {type: String}
 }, {timestamps : true})
 
-const user = mongoDB.model("users", msgSchema)
+const Msgdb = mongoDB.model("Msgdb", msgSchema)
 
-export default user
+export default Msgdb
