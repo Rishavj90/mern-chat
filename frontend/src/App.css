@@ -10,8 +10,18 @@
   background-size: 20px 20px;
   background-position: 0 0,10px 10px;
 }
-/* background-color: #ffffff;
-opacity: 0.8;
-background-image:  radial-gradient(#cbe86b 1.65px, transparent 1.65px), radial-gradient(#cbe86b 1.65px, #ffffff 1.65px);
-background-size: 22px 22px;
-background-position: 0 0,11px 11px; */
+
+.graph_paper_dotted{
+  background-color: var(--color-base-100);
+  opacity: 0.8;
+  background-image:  radial-gradient(circle, var(--color-base-300) 0.8px, transparent 0.8px), radial-gradient(circle, var(--color-base-300) 0.8px, transparent 0.8px) ;
+  background-size: 5px 20px, 20px 5px;
+  background-position: -2.5px -10px, -10px -2.5px;
+}
+
+.corinthia-regular {
+  font-family: "Corinthia", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+}
