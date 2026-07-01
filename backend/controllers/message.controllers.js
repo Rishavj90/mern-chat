@@ -2,6 +2,19 @@ import Msgdb from "../model/messages.js"
 import user from "../model/users.js"
 import cloudinary from "../lib/cloudinary.js"
 
+export async function getUser(req, res) {
+    try {
+        const userId = req.params.chatId
+        const chatUser = await user.findById(userId).select("-password")
+        return res.status(200).json(chatUser)
+    } catch (error) {
+        console.error("getUser", error)
+        return res.status(500).json({
+            message : "Internal Server Error"
+        })
+    }
+}
+
 export async function getUsersForSidebar(req, res) {
     try {
         const loggedInUser = req.user._id

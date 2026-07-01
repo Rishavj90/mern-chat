@@ -3,8 +3,11 @@ import Dock from "../components/Dock.jsx"
 import api from "../lib/axios.js"
 import toast from "react-hot-toast"
 import { Link } from "react-router-dom"
+
+
 function Homepage() {
     const [user, setUser] = useState([])
+    
     useEffect(()=>{
         async function getUser(){
             try {
@@ -19,7 +22,7 @@ function Homepage() {
     }, [])
 
     return (
-        <div className="w-full h-screen p-5 graph_paper_dotted">
+        <div className="w-full min-h-screen p-5 graph_paper_dotted">
             <div className="flex justify-center items-center border-b-2 mb-5">
                 <img src="/images/android-chrome-512x512.png" alt="cat logo" className="size-10" />
                 <h1 className="pl-2 corinthia-regular">La Chaton Fat</h1>
@@ -28,8 +31,11 @@ function Homepage() {
                 {user.map((u)=>{
                     return(
                         <Link to={`/${u._id}`}>
-                            <div key={u._id} className="w-full p-2 flex items-center rounded-2xl hover:bg-(--color-primary)">
-                                <img src="/images/android-chrome-512x512.png" alt="profile pic" className="size-10 mr-2 rounded-full" />
+                            <div 
+                                key={u._id}
+                                className="w-full p-2 flex items-center rounded-2xl hover:bg-(--color-base-200)"
+                            >
+                                <img src={"/images/android-chrome-512x512.png"} alt="profile pic" className="size-10 mr-2 rounded-full" />
                                 <p>{u.first_name} {u.last_name}</p>
                             </div>
                         </Link>

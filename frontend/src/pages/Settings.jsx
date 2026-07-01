@@ -11,7 +11,7 @@ function Settings() {
     const [isUploadingImage, setIsUploadingImage] = useState(false)
 
     return (
-        <div className="w-full h-full p-5 graph_paper_dotted">
+        <div className="w-full min-h-screen p-5 graph_paper_dotted">
             <div className="flex justify-center items-center border-b-2 mb-4">
                 <h1 className="pl-2 corinthia-regular">Settings</h1>
             </div>
